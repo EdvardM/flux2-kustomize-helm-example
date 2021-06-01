@@ -30,7 +30,7 @@ mkdir -p /tmp/flux-crd-schemas/master-standalone-strict
 curl -sL https://github.com/fluxcd/flux2/releases/latest/download/crd-schemas.tar.gz | tar zxf - -C /tmp/flux-crd-schemas/master-standalone-strict
 
 # mirror kustomize-controller build options
-kustomize_flags="--enable_kyaml=false --allow_id_changes=false --load_restrictor=LoadRestrictionsNone"
+kustomize_flags="--enable-alpha-plugins --load-restrictor=LoadRestrictionsNone"
 kustomize_config="kustomization.yaml"
 
 find . -type f -name '*.yaml' -print0 | while IFS= read -r -d $'\0' file;
